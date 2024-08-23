@@ -75,6 +75,7 @@ app.get('/posts-multiple-tags', async (req, res) => {
 
   // return res.status(200).send(finalresult);
   //方法5. 使用 filter 和find 来去重
+  //这个方法对于小数据集来说比较直观，但在大型数据集上可能会比较慢.
   const uniqueData = flatData.filter(
     (item, index, self) => index === self.findIndex((t) => t.id === item.id)
   );
